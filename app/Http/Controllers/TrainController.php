@@ -14,8 +14,8 @@ class TrainController extends Controller
 
         $trains = Train::all();
 
-        dump($date);
-        
+        //dump($date);
+
         return view('trains', compact('trains'), compact('date'));
 
     }
