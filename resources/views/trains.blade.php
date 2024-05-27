@@ -12,7 +12,7 @@
 
 <section class="py-5">
     <div class="container">
-        <table class="table bordered-table">
+        <table class="table table-dark table-striped table-bordered border-success">
             <thead>
                 <tr>
                     <th scope="col">Agenzia</th>
