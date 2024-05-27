@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class TrainController extends Controller
 {
-    public function trains()
+    public function index()
     {
         $date = Carbon::now();;
 
