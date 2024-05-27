@@ -17,11 +17,13 @@
                 <tr>
                     <th scope="col">Agenzia</th>
                     <th scope="col">Codice Treno</th>
+                    <th scope="col" class="text-center">Carrozze</th>
                     <th scope="col">Stazione di Partenza</th>
                     <th scope="col">Stazione di Arrivo</th>
                     <th scope="col">Orario di Partenza</th>
                     <th scope="col">Orario di Arrivo</th>
-                    <th scope="col" class="text-center">Carrozze</th>
+                    <th scope="col">In orario</th>
+                    <th scope="col">Cancellato</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,11 +31,13 @@
                     <tr>
                         <td>{{$train->agency}}</td>
                         <td>{{$train->train_code}}</td>
+                        <td class="text-center">{{$train->train_carriages}}</td>
                         <td>{{$train->departure_station}}</td>
                         <td>{{$train->arrival_station}}</td>
                         <td>{{$train->departure_time}}</td>
                         <td>{{$train->arrival_time}}</td>
-                        <td class="text-center">{{$train->train_carriages}}</td>
+                        <td class="text-center">{{$train->on_time === 1 ? 'Sì' : 'No'}}</td>
+                        <td class="text-center">{{$train->cancelled === 1 ? 'Sì' : 'No'}}</td>
                     </tr>
                 @endforeach               
             </tbody>
