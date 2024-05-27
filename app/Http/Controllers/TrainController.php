@@ -10,13 +10,14 @@ class TrainController extends Controller
 {
     public function index()
     {
-        $date = Carbon::now();;
+        $date = Carbon::now();
 
-        $trains = Train::all();
+        $trains = Train::where('departure_time', '>=', $date)->get();
+        // Qui andava fatta una where, anzichè recuperare tutti i file.
 
         //dump($date);
 
-        return view('trains', compact('trains'), compact('date'));
+        return view('trains', compact('trains'));
 
     }
 }
