@@ -3,33 +3,41 @@
 @section('title', 'Treni')
 
 @section('main-content')
-    <section class="mt-5 py-1">
-        <div class="container bg-dark py-4">
-            <h1 class="title text-center text-success">Treni!</h1>
-        </div>
-    </section>
-    
+<section class="mt-5 py-1">
+    <div class="container bg-dark py-4">
+        <h1 class="title text-center text-success">Treni!</h1>
+    </div>
+</section>
 
-    <section class="py-5">
-        <div class="container">
-            <div class="row g-5">
-                @foreach ($trains as $train)
-                                        
-                    <div class="col-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <p><span class="text-danger">Agenzia: </span> {{$train->agency}}</p>
-                                <p><span class="text-danger">Stazione di Partenza: </span>{{$train->departure_station}}</p>
-                                <p><span class="text-danger">Stazione di Arrivo: </span> {{$train->arrival_station}}</p>
-                                <p><span class="text-danger">Orario di Partenza: </span> {{$train->departure_time}}</p>
-                                <p><span class="text-danger">Orario di Arrivo: </span> {{$train->arrival_time}}</p>
-                                <p><span class="text-danger">Carrozze: </span> {{$train->train_carriages}}</p>
-                            </div>
-                        </div>
-                    </div>
-                                   
-                @endforeach
-            </div>
-        </div>
-    </section>
+
+<section class="py-5">
+    <div class="container">
+        <table class="table bordered-table">
+            <thead>
+                <tr>
+                    <th scope="col">Agenzia</th>
+                    <th scope="col">Codice Treno</th>
+                    <th scope="col">Stazione di Partenza</th>
+                    <th scope="col">Stazione di Arrivo</th>
+                    <th scope="col">Orario di Partenza</th>
+                    <th scope="col">Orario di Arrivo</th>
+                    <th scope="col" class="text-center">Carrozze</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($trains as $train)                
+                    <tr>
+                        <td>{{$train->agency}}</td>
+                        <td>{{$train->train_code}}</td>
+                        <td>{{$train->departure_station}}</td>
+                        <td>{{$train->arrival_station}}</td>
+                        <td>{{$train->departure_time}}</td>
+                        <td>{{$train->arrival_time}}</td>
+                        <td class="text-center">{{$train->train_carriages}}</td>
+                    </tr>
+                @endforeach               
+            </tbody>
+        </table>
+    </div>
+</section>
 @endsection
