@@ -6,6 +6,7 @@ use App\Models\Train;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\DB;
 
 class TrainSeeder extends Seeder
 {
@@ -42,7 +43,8 @@ class TrainSeeder extends Seeder
         //$stations = ['Torino Porta Nuova', 'Milano Centrale', 'Genova Brignole', 'Messina Marittina', 'Roma Termini', 'Palermo Centrale', 'Bologna Centrale', 'Napoli Centrale'];
         $agencies = ['trenitalia', 'italo', 'frecciarossa', 'intercity'];        
         
-        
+        // Comando che pulisce la tabella prima di popolarla
+        // DB::table('trains')->truncate();
         for($i = 0; $i < 100; $i++)
         {   
             // Creo l'istanza del model Train
